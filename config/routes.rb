@@ -1,6 +1,10 @@
 RubyOnRails::Application.routes.draw do
-  resources :microposts
+  get "account/login"
 
+  get "account/signup"
+
+  resources :microposts
+  match '/signup', :to => 'users#new',:via => :get
 
   resources :users
 
